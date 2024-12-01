@@ -268,7 +268,7 @@ span {
 }
 
 .timeline-items {
-    max-width: 1200px;
+    width: 2000px;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -285,7 +285,7 @@ span {
 }
 
 .timeline-item {
-    margin-bottom: 40px;
+    margin-bottom: 100px;
     width: 100%;
     position: relative;
 }
@@ -310,7 +310,7 @@ span {
     box-shadow: 0 0 25px var(--main-color),
                 0 0 50px var(--main-color);
     position: absolute;
-    left: calc(50% - 8px);
+    left: calc(50% - 9px);
     border-radius: 50%;
     top: 10px;
 }
@@ -322,6 +322,13 @@ span {
     margin: 6px 0 15px;
 }
 
+.timeline-img img {
+    width: 250px;
+    height: 325px;
+    object-fit: cover;
+    border-radius: 1.6rem;
+    box-shadow: 0 0 10px var(--main-color);
+}
 .timeline-content{
     background-color: var(--bg-color);
     border: 3px solid var(--main-color);
@@ -330,18 +337,31 @@ span {
     box-shadow: 0 0 10px var(--main-color);
     cursor: pointer;
     transition: 0.3 ease-in-out;
+    height: 400px;
 }
 
 .timeline-content:hover{
-    transform: scale(1.05);
     box-shadow: 0 0 25px var(--main-color);
 }
 
 .timeline-content h3{
-    font-size: 20px;
+    font-size: 22px;
     color: white;
     margin: 0 0 10px;
     font-weight: 500;
+    transform: none;
+    pointer-events: none;
+}
+
+.left-text {
+    position: absolute;
+    left: 27%;
+    top: 30%;
+}
+.right-text{
+    position: absolute;
+    right: 27%;
+    top: 30%;
 }
 
 .timeline-content p{
@@ -692,3 +712,21 @@ footer .social a{
         grid-template-columns: repeat(1,1fr);
     }
 }
+
+.icon-container {
+    display: flex;           /* Dùng flex để căn giữa */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center;     /* Căn giữa theo chiều dọc */
+    height: 100vh;           /* Chiều cao toàn màn hình, tùy chỉnh theo ý */
+}
+
+.bx.bxl-facebook-circle {
+    font-size: 100px;        /* Tăng kích thước biểu tượng */
+    color: #4267B2;          /* Màu xanh Facebook */
+    transition: transform 0.3s ease; /* Hiệu ứng chuyển động */
+}
+
+.bx.bxl-facebook-circle:hover {
+    transform: scale(1.2);   /* Phóng to khi hover */
+}
+
