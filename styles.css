@@ -353,17 +353,6 @@ span {
     pointer-events: none;
 }
 
-.left-text {
-    position: absolute;
-    left: 27%;
-    top: 30%;
-}
-.right-text{
-    position: absolute;
-    right: 27%;
-    top: 30%;
-}
-
 .timeline-content p{
     color: white;
     font-size: 16px;
@@ -371,6 +360,26 @@ span {
     line-height: 22px;
 }
 
+.logo2-container {
+    position: relative;
+}
+.bx.bxl-facebook-circle{
+    border-radius: 50%;
+}
+.bx.bxl-facebook-circle:hover {
+    box-shadow: 0 0 25px var(--main-color);  /* Phóng to khi hover */
+}
+
+.bx.bxl-instagram-alt{
+    border: var(--main-color);
+}
+
+.bx.bxl-instagram-alt{
+    border-radius: 30%;
+}
+.bx.bxl-instagram-alt:hover{
+    box-shadow: 0 0 20px var(--main-color);
+}
 ::-webkit-scrollbar{
     width: 15px;
 }
@@ -460,6 +469,7 @@ span {
 
 .testimonials-box img{
     width: 15rem;
+    height: 15rem;
     border-radius: 50%;
     border: 3px solid var(--main-color);
     box-shadow: 0 0 25px var(--main-color);
@@ -468,7 +478,7 @@ span {
 .wrapper{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
+    gap: 2rem;
 }
 
 .testimonials-item{
@@ -499,13 +509,17 @@ span {
 }
 
 .testimonials-item p{
-    font-size: 1.3rem;
+    font-size: 2.5rem;
 }
 
-#star{
-    color: gold;
-    font-size: 2rem;
+.testimonials-icon{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    width: 35%;
+    font-size: 30px;
 }
+
 
 .contact{
     background-color: var(--bg-color);
@@ -713,20 +727,24 @@ footer .social a{
     }
 }
 
-.icon-container {
-    display: flex;           /* Dùng flex để căn giữa */
-    justify-content: center; /* Căn giữa theo chiều ngang */
-    align-items: center;     /* Căn giữa theo chiều dọc */
-    height: 100vh;           /* Chiều cao toàn màn hình, tùy chỉnh theo ý */
+
+.search-bar {
+    margin-bottom: 2rem; /* Khoảng cách giữa thanh tìm kiếm và phần nội dung */
+    text-align: center;
 }
 
-.bx.bxl-facebook-circle {
-    font-size: 100px;        /* Tăng kích thước biểu tượng */
-    color: #4267B2;          /* Màu xanh Facebook */
-    transition: transform 0.3s ease; /* Hiệu ứng chuyển động */
+#search-input {
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 80%;
+    max-width: 400px;
+    border: 2px solid var(--main-color);
+    border-radius: 2rem;
+    outline: none;
+    transition: all 0.3s ease;
 }
 
-.bx.bxl-facebook-circle:hover {
-    transform: scale(1.2);   /* Phóng to khi hover */
+#search-input:focus {
+    border-color: var(--main-color);
+    box-shadow: 0 0 10px var(--main-color);
 }
-
