@@ -520,6 +520,33 @@ span {
     font-size: 30px;
 }
 
+.search-bar {
+    margin-bottom: 2rem; /* Khoảng cách giữa thanh tìm kiếm và phần nội dung */
+    text-align: center;
+}
+
+#search-input {
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 80%;
+    max-width: 400px;
+    border: 2px solid var(--main-color);
+    border-radius: 2rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+.highlight {
+    grid-column: 1 / -1; /* Chiếm toàn bộ chiều ngang */
+    order: -1; /* Đưa lên đầu danh sách */
+    margin: 0 auto;
+    position: relative;
+    top: -10px;
+}
+#search-input:focus {
+    border-color: var(--main-color);
+    box-shadow: 0 0 10px var(--main-color);
+}
+
 
 .contact{
     background-color: var(--bg-color);
@@ -728,23 +755,3 @@ footer .social a{
 }
 
 
-.search-bar {
-    margin-bottom: 2rem; /* Khoảng cách giữa thanh tìm kiếm và phần nội dung */
-    text-align: center;
-}
-
-#search-input {
-    padding: 10px 20px;
-    font-size: 16px;
-    width: 80%;
-    max-width: 400px;
-    border: 2px solid var(--main-color);
-    border-radius: 2rem;
-    outline: none;
-    transition: all 0.3s ease;
-}
-
-#search-input:focus {
-    border-color: var(--main-color);
-    box-shadow: 0 0 10px var(--main-color);
-}
