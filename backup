@@ -260,7 +260,6 @@ span {
 
 .member {
     padding: 100px 15px;
-    width: 100%;
     background: var(--second-bg-color);
 }
 
@@ -269,7 +268,7 @@ span {
 }
 
 .timeline-items {
-    width: 100%;
+    width: 2000px;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -480,29 +479,18 @@ span {
 .wrapper{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 4rem;
-}
-
-@media only screen and (max-width: 650px) {
-    .wrapper{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 4rem;
-    }
-
+    gap: 2rem;
 }
 
 .testimonials-item{
-    /* min-height: 550px; */
-    /* max-width: 450px; */
-    width: 100%;
+    min-height: 550px;
+    max-width: 450px;
     background: rgba(0, 0, 0, 0.9);
     border: 3px solid rgba(238, 238, 238, 0.2);
     border-radius: 2rem;
-    /* margin: 30px 60px; */
+    margin: 30px 60px;
     cursor: pointer;
     display: flex;
-    padding: 1.5rem;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -529,7 +517,7 @@ span {
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    /* width: 35%; */
+    width: 35%;
     font-size: 30px;
 }
 
@@ -551,9 +539,9 @@ span {
 .highlight {
     grid-column: 1 / -1; /* Chiếm toàn bộ chiều ngang */
     order: -1; /* Đưa lên đầu danh sách */
-    /* margin: 0 auto; */
+    margin: 0 auto;
     position: relative;
-    /* top: -10px; */
+    top: -10px;
 }
 #search-input:focus {
     border-color: var(--main-color);
@@ -670,8 +658,9 @@ footer .social a{
         font-size: 55%;
     }
     .services-container{
+        width: 100%;
         padding-bottom: 7rem;
-        grid-template-columns: repeat(2, 1f);
+        grid-template-columns: repeat(2, 1fr);
         margin: 0 5rem;
     }
 }
@@ -714,6 +703,7 @@ footer .social a{
 }
 @media(max-width:895px){
     #menu-icon{
+        
         display: block;
     }
     .navbar{
@@ -746,8 +736,8 @@ footer .social a{
         font-size: 2.6rem;
     }
     .home-content h1{
-        font-size: 6rem;
-        margin-top: 0rem;
+        font-size: 8rem;
+        margin-top: 3rem;
     }
     .home-content p{
         max-width: 600px;
@@ -763,12 +753,8 @@ footer .social a{
     }
 
     .services-container{
-        grid-template-columns: repeat(1,1fr);
+        grid-template-columns: repeat(2,1fr);
     }
 }
 
-@media only screen and (max-width: 650px) {
-    .member h2 {
-        font-size: 5em;
-    }
-}
+

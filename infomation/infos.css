@@ -1,0 +1,45 @@
+
+:root {
+    --bg-color: #080808;
+    --second-bg-color: #131313;
+    --text-color: white;
+    --main-color: rgb(105, 10, 214);
+}
+
+html {
+    font-size: 60%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0; /* Xóa khoảng cách mặc định */
+    padding: 0;
+    border: 5px solid #3498db; /* Độ rộng viền là 20px */
+    box-sizing: border-box; /* Bao gồm border trong kích thước */
+    min-height: 100vh; 
+    border-radius: 5%;
+}
+
+body img{
+    border-radius: 5%;
+    position: absolute;
+    top: 7.5%;
+    right: 65%;
+    width: 600px;
+    height: 900px;
+    object-fit: 100%;
+}
+body p{
+    font-size: 50px;
+    position: absolute;
+    top: 15%;
+    right: 30%;
+}
