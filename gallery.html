@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Gallery</title>
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <button id="backToMain" onclick="goToMainPage()">Quay về Trang Chính</button>
+
+    <main class="gallery-container">
+        <div class="video-card" onclick="openVideo('video1.mp4')">
+            <video muted>
+                <source src="video1.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-card" onclick="openVideo('video2.mp4')">
+            <video muted>
+                <source src="video2.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-card" onclick="openVideo('video3.mp4')">
+            <video muted>
+                <source src="video3.mp4" type="video/mp4">
+            </video>
+        </div>
+    </main>
+
+    <div id="videoModal" class="modal">
+        <button class="close-btn" onclick="closeVideo()">×</button>
+        <video id="modalVideo" controls autoplay></video>
+    </div>
+
+    <script src="gallery.js"></script>
+</body>
+</html>

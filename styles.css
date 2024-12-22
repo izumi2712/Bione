@@ -16,7 +16,7 @@ h3{
     --bg-color: #080808;
     --second-bg-color: #131313;
     --text-color: white;
-    --main-color: rgb(105, 10, 214);
+    --main-color: rgb(255, 255, 255);
 }
 
 html {
@@ -28,6 +28,16 @@ body {
     background: var(--bg-color);
     color: var(--text-color);
 }
+
+@keyframes snowAnim{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(650px);
+    }
+}
+
 
 .header {
     position: fixed;
@@ -100,6 +110,15 @@ section {
     justify-content: center;
     margin-top: 3rem;
 }
+.video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Để video chiếm toàn bộ chiều rộng */
+    height: 100%; /* Để video chiếm toàn bộ chiều cao */
+    object-fit: cover; /* Đảm bảo video phủ hết phần tử mà không thay đổi tỷ lệ */
+    z-index: -1; /* Đưa video ra phía sau nội dung */
+}
 
 span {
     color: var(--main-color);
@@ -110,6 +129,7 @@ span {
     margin-top: 1rem;
     font-size: 3.5rem;
 }
+
 
 .home-content h1 {
     font-size: 7rem;
@@ -236,7 +256,7 @@ span {
         content: "Yeu thuong";
     }
     41%, 60% {
-        content: "Nho nhung";
+        content: "Dang Yeu";
     }
     61%, 80% {
         content: "Doan ket";
