@@ -9,6 +9,9 @@
     font-family: "Poppins", sans-serif;
 }
 
+h3{
+    font-size: 15px;
+}
 :root {
     --bg-color: #080808;
     --second-bg-color: #131313;
@@ -529,7 +532,7 @@ span {
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    /* width: 35%; */
+    gap: 30px;
     font-size: 30px;
 }
 
