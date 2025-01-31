@@ -1,19 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery</title>
-    <link rel="stylesheet" href="gallery.css">
+    <title>Gallery Ảnh và Video</title>
+    <link rel="stylesheet" href="gallery.css"> <!-- Liên kết CSS -->
 </head>
 <body>
-    <div class="gallery" id="gallery"></div>
-
-    <div class="viewer" id="viewer">
-        <div class="viewer-content" id="viewer-content"></div>
-        <button class="close-btn" id="close-btn">Close</button>
+    <h1>Gallery Ảnh và Video</h1>
+    <!-- Thêm thanh tìm kiếm -->
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Tìm kiếm mốc thời gian..." />
+    </div>
+    <div id="timeline">
+        <!-- Nội dung timeline sẽ được thêm vào đây bằng JavaScript -->
     </div>
 
-    <script src="gallery.js"></script>
+    <!-- Nút quay về trang chủ -->
+    <a href="index.html" class="home-button">Quay về trang chủ</a>
+
+    <script src="gallery.js"></script> <!-- Liên kết JavaScript -->
 </body>
 </html>
