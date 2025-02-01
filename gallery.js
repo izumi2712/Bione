@@ -1,4 +1,4 @@
-fetch('/gallery-data.json')
+fetch('./gallery-data.json')
     .then(response => response.json())
     .then(data => {
         console.log('Dữ liệu JSON đã được tải:', data); // Log dữ liệu JSON
