@@ -1,52 +1,46 @@
-// Lấy dữ liệu từ file JSON
 fetch('/gallery-data.json')
     .then(response => response.json())
     .then(data => {
+        console.log('Dữ liệu JSON đã được tải:', data); // Log dữ liệu JSON
         const timeline = document.getElementById('timeline');
         const searchInput = document.getElementById('search-input');
 
-        // Hàm hiển thị timeline
         function renderTimeline(filteredData = data) {
             timeline.innerHTML = ''; // Xóa nội dung cũ
 
-            // Duyệt qua từng mốc thời gian
             filteredData.forEach(folder => {
+                console.log('Đang xử lý folder:', folder.folder); // Log tên folder
                 const timelineItem = document.createElement('div');
                 timelineItem.className = 'timeline-item';
 
-                // Thêm ngày tháng
                 const timelineDate = document.createElement('div');
                 timelineDate.className = 'timeline-date';
-                timelineDate.textContent = folder.folder; // Tên folder là mốc thời gian
+                timelineDate.textContent = folder.folder;
                 timelineItem.appendChild(timelineDate);
 
-                // Tạo gallery cho mốc thời gian này
                 const gallery = document.createElement('div');
                 gallery.className = 'gallery';
 
-                // Thêm ảnh/video vào gallery
                 folder.files.forEach(file => {
+                    console.log('Đang xử lý file:', file); // Log tên file
                     const filePath = `B1 memories/${file}`;
                     const galleryItem = document.createElement('div');
                     galleryItem.className = 'gallery-item';
 
                     if (file.endsWith('.mp4')) {
-                        // Nếu là video
                         const video = document.createElement('video');
                         video.src = filePath;
                         video.controls = true;
                         galleryItem.appendChild(video);
                     } else {
-                        // Nếu là ảnh
                         const img = document.createElement('img');
                         img.src = filePath;
                         img.alt = file;
                         galleryItem.appendChild(img);
                     }
 
-                    // Thêm tên file
                     const fileName = document.createElement('p');
-                    fileName.textContent = file.split('/').pop(); // Lấy tên file
+                    fileName.textContent = file.split('/').pop();
                     galleryItem.appendChild(fileName);
 
                     gallery.appendChild(galleryItem);
@@ -56,20 +50,17 @@ fetch('/gallery-data.json')
                 timeline.appendChild(timelineItem);
             });
 
-            // Gọi hàm xử lý overlay sau khi tạo xong gallery
             setupOverlay();
         }
 
-        // Hiển thị toàn bộ timeline ban đầu
         renderTimeline();
 
-        // Xử lý sự kiện tìm kiếm
         searchInput.addEventListener('input', (e) => {
-            const searchTerm = e.target.value.toLowerCase(); // Lấy giá trị tìm kiếm
+            const searchTerm = e.target.value.toLowerCase();
             const filteredData = data.filter(folder => 
-                folder.folder.toLowerCase().includes(searchTerm) // Lọc theo mốc thời gian
+                folder.folder.toLowerCase().includes(searchTerm)
             );
-            renderTimeline(filteredData); // Hiển thị kết quả lọc
+            renderTimeline(filteredData);
         });
     })
     .catch(error => {
