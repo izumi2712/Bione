@@ -23,7 +23,7 @@ fetch('/gallery-data.json')
 
                 folder.files.forEach(file => {
                     console.log('Đang xử lý file:', file); // Log tên file
-                    const filePath = `B1 memories/${file}`;
+                    const filePath = `B1 Memories/${file}`;
                     const galleryItem = document.createElement('div');
                     galleryItem.className = 'gallery-item';
 
