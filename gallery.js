@@ -66,7 +66,7 @@ fetch('./gallery-data.json')
     .catch(error => {
         console.error('Lỗi khi tải dữ liệu gallery:', error);
     });
-
+    
 // Hàm xử lý overlay (giữ nguyên)
 function setupOverlay() {
     const galleryItems = document.querySelectorAll('.gallery-item');
