@@ -11,6 +11,7 @@
 
 h3{
     font-size: 15px;
+    color: white;
 }
 :root {
     --bg-color: #080808;
@@ -70,6 +71,7 @@ body {
 }
 
 .navbar a {
+    color: white;
     font-size: 1.8rem;
     color: var(--text-color);
     margin-left: 4rem;
@@ -125,6 +127,7 @@ span {
 }
 
 .home-content h3 {
+    color: white;
     margin-bottom: 2rem;
     margin-top: 1rem;
     font-size: 3.5rem;
@@ -132,6 +135,7 @@ span {
 
 
 .home-content h1 {
+    color: white;
     font-size: 7rem;
     font-weight: 700;
     margin-top: 1.5rem;
@@ -155,6 +159,7 @@ span {
 }
 
 .home-content p {
+    color: white;
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 1.8;
@@ -162,6 +167,7 @@ span {
 }
 
 .social-icons a {
+    color: white;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -306,6 +312,7 @@ span {
 }
 
 .member h2 {
+    color: white;
     margin-bottom: 5rem;
 }
 
@@ -414,11 +421,9 @@ span {
 
 .bx.bxl-instagram-alt{
     border: var(--main-color);
-}
-
-.bx.bxl-instagram-alt{
     border-radius: 30%;
 }
+
 .bx.bxl-instagram-alt:hover{
     box-shadow: 0 0 20px var(--main-color);
 }
@@ -464,7 +469,7 @@ span {
 }
 
 .service-box:hover{
-    background: white;
+    background: black;
     color: black;
     border: 5px solid var(--main-color);
     transform: scale(1.03);
