@@ -82,25 +82,96 @@ function setupOverlay() {
     closeBtn.className = 'close-btn';
     closeBtn.innerHTML = '&times;'; // Dấu X
 
-    // Thêm nút đóng và nội dung vào overlay
+    // Tạo nút điều khiển (trái/phải)
+    const controls = document.createElement('div');
+    controls.className = 'overlay-controls';
+
+    const prevButton = document.createElement('button');
+    prevButton.innerHTML = '&#10094;'; // Nút trái
+    const nextButton = document.createElement('button');
+    nextButton.innerHTML = '&#10095;'; // Nút phải
+
+    controls.appendChild(prevButton);
+    controls.appendChild(nextButton);
+
+    // Tạo nút phóng to/thu nhỏ
+    const zoomControls = document.createElement('div');
+    zoomControls.className = 'zoom-controls';
+
+    const zoomInButton = document.createElement('button');
+    zoomInButton.innerHTML = '+'; // Nút phóng to
+    const zoomOutButton = document.createElement('button');
+    zoomOutButton.innerHTML = '-'; // Nút thu nhỏ
+
+    zoomControls.appendChild(zoomInButton);
+    zoomControls.appendChild(zoomOutButton);
+
+    // Thêm các nút vào overlay
     overlay.appendChild(overlayContent);
     overlay.appendChild(closeBtn);
+    overlay.appendChild(controls);
+    overlay.appendChild(zoomControls);
 
     // Thêm overlay vào body
     document.body.appendChild(overlay);
 
+    let currentIndex = 0;
+    let currentFolder = null;
+    let currentMediaList = [];
+    let currentScale = 1; // Biến lưu tỷ lệ phóng to hiện tại
+
     // Xử lý sự kiện khi bấm vào ảnh/video
-    galleryItems.forEach(item => {
+    galleryItems.forEach((item, index) => {
         item.addEventListener('click', () => {
-            const media = item.querySelector('img, video'); // Lấy ảnh hoặc video
-            if (media) {
-                const mediaClone = media.cloneNode(true); // Clone ảnh/video
-                overlayContent.innerHTML = ''; // Xóa nội dung cũ
-                overlayContent.appendChild(mediaClone); // Thêm ảnh/video vào overlay
-                overlay.style.display = 'flex';
-                setTimeout(() => overlay.classList.add('show'), 10);
-            }
+            const folderItem = item.closest('.timeline-item');
+            currentFolder = folderItem.querySelector('.timeline-date').textContent;
+            currentMediaList = Array.from(folderItem.querySelectorAll('.gallery-item'));
+            currentIndex = currentMediaList.indexOf(item);
+
+            showMedia(currentMediaList[currentIndex]);
+            overlay.style.display = 'flex';
+            setTimeout(() => overlay.classList.add('show'), 10);
         });
+    });
+
+    // Hàm hiển thị media
+    function showMedia(item) {
+        const media = item.querySelector('img, video').cloneNode(true);
+        overlayContent.innerHTML = '';
+        overlayContent.appendChild(media);
+        currentScale = 1; // Reset tỷ lệ phóng to khi hiển thị media mới
+        media.style.transform = `scale(${currentScale})`; // Áp dụng tỷ lệ ban đầu
+    }
+
+    // Xử lý sự kiện nút trái
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + currentMediaList.length) % currentMediaList.length;
+        showMedia(currentMediaList[currentIndex]);
+    });
+
+    // Xử lý sự kiện nút phải
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % currentMediaList.length;
+        showMedia(currentMediaList[currentIndex]);
+    });
+
+    // Xử lý sự kiện nút phóng to
+    zoomInButton.addEventListener('click', () => {
+        const media = overlayContent.querySelector('img, video');
+        if (media) {
+            currentScale += 0.1; // Tăng tỷ lệ phóng to lên 10%
+            media.style.transform = `scale(${currentScale})`;
+        }
+    });
+
+    // Xử lý sự kiện nút thu nhỏ
+    zoomOutButton.addEventListener('click', () => {
+        const media = overlayContent.querySelector('img, video');
+        if (media) {
+            currentScale -= 0.1; // Giảm tỷ lệ phóng to đi 10%
+            if (currentScale < 0.1) currentScale = 0.1; // Giới hạn tỷ lệ tối thiểu
+            media.style.transform = `scale(${currentScale})`;
+        }
     });
 
     // Xử lý sự kiện khi bấm nút đóng
