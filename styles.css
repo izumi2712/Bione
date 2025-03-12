@@ -98,6 +98,8 @@ section {
 }
 
 .home {
+    background-color: var(--second-bg-color);
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -308,7 +310,7 @@ span {
 .member {
     padding: 100px 15px;
     width: 100%;
-    background: var(--second-bg-color);
+    background: var(--bg-color);
 }
 
 .member h2 {
@@ -818,4 +820,64 @@ footer .social a{
     .member h2 {
         font-size: 5em;
     }
+}
+/* Thẻ ngang hiển thị thông tin chi tiết */
+.member-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--bg-color);
+    border: 3px solid var(--main-color);
+    border-radius: 2rem;
+    padding: 5rem; /* Tăng padding để tạo khoảng cách bên trong thẻ */
+    box-shadow: 0 0 25px var(--main-color);
+    z-index: 1000;
+    width: 600px; /* Tăng chiều rộng của thẻ */
+    height: 400px;
+    display: flex;
+    align-items: center;
+    gap: 3rem; /* Tăng khoảng cách giữa ảnh và thông tin */
+}
+
+.member-card img {
+    width: 200px; /* Tăng kích thước ảnh */
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid var(--main-color); /* Tăng độ dày viền */
+}
+
+.member-card .card-content {
+    flex: 1;
+}
+
+.member-card h2 {
+    font-size: 2.5rem; /* Tăng kích thước font cho tiêu đề */
+    margin-bottom: 1.5rem;
+}
+
+.member-card p {
+    font-size: 1.5rem; /* Tăng kích thước font cho nội dung */
+    margin: 0.75rem 0;
+}
+
+.member-card .social-icons {
+    display: flex;
+    gap: 1rem; /* Tăng khoảng cách giữa các biểu tượng mạng xã hội */
+    margin: 1rem 0;
+}
+
+.member-card button {
+    padding: 1rem 1.5rem; /* Tăng kích thước nút */
+    background: var(--main-color);
+    border: none;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    font-size: 1.25rem; /* Tăng kích thước font cho nút */
+    margin-top: 1.5rem;
+}
+
+.member-card button:hover {
+    background: var(--second-bg-color);
+    color: var(--main-color);
 }

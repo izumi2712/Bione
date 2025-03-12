@@ -1,0 +1,36 @@
+[
+    {
+        "id": 0,
+        "name": "Cao Tiến",
+        "birthday": "01/01/2007",
+        "hometown": "Hà Nội",
+        "job": "Giáo viên",
+        "hobbies": "Đọc sách, du lịch",
+        "image": "Images/Phương Anh.jpg",
+        "facebook": "https://www.facebook.com/phuong.anh.nguyen.478233",
+        "instagram": "https://www.instagram.com/phuonganh.ngtr/"
+    },
+    {
+        "id": 2,
+        "name": "Hải Ánh",
+        "birthday": "02/02/2007",
+        "hometown": "Hà Nội",
+        "job": "Học sinh",
+        "hobbies": "Nghe nhạc, chơi game",
+        "image": "Images/Hải Ánh.jpg",
+        "facebook": "https://www.facebook.com/profile.php?id=100072391856671",
+        "instagram": "https://www.instagram.com/bong_hoa_nho_cua_mat_troi/"
+    },
+    {
+        "id": 3,
+        "name": "Đức Bảo",
+        "birthday": "03/03/2007",
+        "hometown": "Hà Nội",
+        "job": "Học sinh",
+        "hobbies": "Đá bóng, xem phim",
+        "image": "Images/Đức Bảo.jpg",
+        "facebook": "https://www.facebook.com/profile.php?id=61550822355523",
+        "instagram": "https://www.instagram.com/nguyendinh.ducbao/"
+    }
+
+]

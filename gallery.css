@@ -1,15 +1,17 @@
 /* Phần CSS hiện tại */
 body {
     font-family: Arial, sans-serif;
-    background-color: #1e1e2f; /* Màu nền tối hơn */
+    background-color: #000000; /* Màu nền tối hơn */
     margin: 0;
     padding: 20px;
     color: #ecf0f1;
 }
 
 h1 {
+    font-family: 'HarmonyOS Sans', sans-serif;
+                                                
     text-align: center;
-    color: #ff6f61; /* Màu tiêu đề nổi bật */
+    color: #e0f806; /* Màu tiêu đề nổi bật */
     margin-bottom: 20px;
     font-size: 2.5em;
     font-weight: 300;
